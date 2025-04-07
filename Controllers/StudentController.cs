@@ -4,7 +4,7 @@ namespace Soccer.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class SessionsController : ControllerBase
+public class SessionController : ControllerBase
 {
    
     
