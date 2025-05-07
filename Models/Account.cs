@@ -1,15 +1,10 @@
 namespace Soccer.Models
 {
-    public class User
+    public class Account
     {
         public int Id { get; set; }
-        public string Email { get; set; }
-
-        public string Password { get; set; }
 
         public bool IsActive { get; set; }
-
-        public ICollection<Account> Accounts { get; set; }
 
         public DateTime UpdatedTimestamp { get; set; }
 

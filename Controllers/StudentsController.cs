@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Soccer.Controllers;
@@ -9,6 +10,7 @@ namespace Soccer.Controllers;
 public class StudentsController : ControllerBase
 {
     [HttpGet]
+    [Authorize]
     public IEnumerable<string> FindAll()
     {
         return new string[] { "Andril", "Vishnu" };

@@ -16,7 +16,7 @@ namespace Soccer.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Student",
+                name: "Students",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -37,7 +37,7 @@ namespace Soccer.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "User",
+                name: "Users",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)

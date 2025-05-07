@@ -8,13 +8,11 @@ namespace Soccer.Data
     {
         // Constructor that passes options to the base DbContext
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
-        {
-        }
+            : base(options) { }
 
         // Define DbSets for your entities. For example, a Products table:
-         public DbSet<User> User { get; set; }
-         public DbSet<Student> Student { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Student> Students { get; set; }
 
         // Override OnModelCreating to configure your model (optional)
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -24,5 +22,4 @@ namespace Soccer.Data
             // modelBuilder.Entity<Product>().Property(p => p.Name).IsRequired();
         }
     }
-
 }

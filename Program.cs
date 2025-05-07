@@ -3,7 +3,6 @@ using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-
 using Soccer.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,25 +16,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
         ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))
     )
 );
-builder
-    .Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(
-        (options) =>
-        {
-            options.TokenValidationParameters = new TokenValidationParameters
-            {
-                ValidIssuer = builder.Configuration["Jwt:Issuer"],
-                ValidAudience = builder.Configuration["Jwt:Audience"],
-                IssuerSigningKey = new SymmetricSecurityKey(
-                    Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])
-                ),
-                ValidateIssuer = true,
-                ValidateAudience = true,
-                ValidateLifetime = false,
-                ValidateIssuerSigningKey = true,
-            };
-        }
-    );
+
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
